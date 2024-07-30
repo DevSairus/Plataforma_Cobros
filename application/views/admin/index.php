@@ -6,7 +6,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             NUMERO CLIENTES</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $qCts->cantidad ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -22,7 +22,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             NUMERO PRESTAMOS</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $qLoans->cantidad ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">6</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $qPaids->cantidad ?></div>
                             </div>
                         </div>
                     </div>
@@ -54,17 +54,55 @@
 </div>
 
 <div class="card shadow mb-4">
-<!-- Card Header - Dropdown -->
-<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-    <h6 class="m-0 font-weight-bold text-primary">Bienvenido <?php echo $this->session->userdata('first_name'). ' '.$this->session->userdata('last_name'); ?>!</h6>
-</div>
-<!-- Card Body -->
-<div class="card-body">
-    <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-        <canvas id="myPieChart" width="468" height="245" style="display: block; width: 468px; height: 245px;" class="chartjs-render-monitor"></canvas>
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Bienvenido <?php echo $this->session->userdata('first_name'). ' '.$this->session->userdata('last_name'); ?>!</h6>
     </div>
-    <div class="mt-4 text-center">
-        <div class="h5 font-weight-bold text-gray-500">Total prestamos</div>
+    <div class="card-body">
+      <p class="text-center h5 mb-4">Total prestamos</p>
+      
+      <canvas id="grafica"></canvas>
     </div>
 </div>
-</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+<script>
+  //When receiving data from a web server, the data is always a string.
+  //Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+  var cData = JSON.parse('<?php echo $countLC; ?>');
+ 
+  console.log("datos", cData)
+
+  // Obtener una referencia al elemento canvas del DOM
+  const $grafica = document.querySelector("#grafica");
+  // Las etiquetas son las porciones de la gráfica
+  const etiquetas = cData.label
+  // Podemos tener varios conjuntos de datos. Comencemos con uno
+  const datosIngresos = {
+    data: cData.data, // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+    // Ahora debería haber tantos background colors como datos, es decir, para este ejemplo, 4
+    backgroundColor: [
+        'rgba(163,221,203,0.2)',
+        'rgba(232,233,161,0.2)',
+        'rgba(230,181,102,0.2)',
+        'rgba(229,112,126,0.2)',
+    ],// Color de fondo
+    borderColor: [
+        'rgba(163,221,203,1)',
+        'rgba(232,233,161,1)',
+        'rgba(230,181,102,1)',
+        'rgba(229,112,126,1)',
+    ],// Color del borde
+    borderWidth: 1,// Ancho del borde
+  };
+
+  new Chart($grafica, {
+    type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
+    data: {
+      labels: etiquetas,
+      datasets: [
+          datosIngresos,
+          // Aquí más datos...
+      ]
+    },
+  });
+</script>
