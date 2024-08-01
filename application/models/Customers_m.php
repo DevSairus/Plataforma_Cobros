@@ -32,7 +32,7 @@ class Customers_m extends MY_Model {
     $customer->gender = 'none';
     $customer->department_id = 0;
     $customer->province_id = 0;
-    //$customer->district_id = 0;
+    $customer->district_id = 0;
     $customer->address = '';
     $customer->mobile = '';
     $customer->phone = '';
@@ -65,7 +65,7 @@ class Customers_m extends MY_Model {
     $this->db->where('department_id', $dp_id);
 
     $query = $this->db->get('ubigeo_provinces'); //select * from ubigeo_proinces
-    $output1 = '<option value="0">Seleccionar provincia</option>';
+    $output1 = '<option value="0">Seleccionar departamento</option>';
 
     foreach ($query->result() as $row) {
       $output1 .= '<option value="'.$row->id.'">'.$row->name.'</option>';
@@ -79,7 +79,7 @@ class Customers_m extends MY_Model {
     $this->db->where('province_id', $pr_id);
 
     $query = $this->db->get('ubigeo_districts'); //select * from ubigeo_proinces
-    $output1 = '<option value="0">Seleccionar distrito</option>';
+    $output1 = '<option value="0">Seleccionar ciudad</option>';
 
     foreach ($query->result() as $row) {
       $output1 .= '<option value="'.$row->id.'">'.$row->name.'</option>';

@@ -13,7 +13,7 @@
 
       <div class="form-row">
         <div class="form-group col-12 col-md-8">
-          <label class="small mb-1" for="exampleFormControlSelect2">Buscar cliente por DNI</label>
+          <label class="small mb-1" for="exampleFormControlSelect2">Buscar cliente por cédula</label>
           <div class="input-group">
             <input type="text" id="dni" class="form-control">
             <input type="hidden" name="customer_id" id="customer">
@@ -28,7 +28,7 @@
 
       <div class="form-row">
         <div class="form-group col-12 col-md-4">
-          <label class="small mb-1" for="inputUsername">Dni</label>
+          <label class="small mb-1" for="inputUsername">Cédula</label>
           <input class="form-control" id="dni_cst" type="text" disabled>
         </div>
         <div class="form-group col-12 col-md-4">
@@ -57,10 +57,10 @@
           <label class="small mb-1" for="exampleFormControlSelect2">Forma de pago</label>
           <select class="form-control" name="payment_m">
 
-            <option value="diario">diario</option>
-            <option value="semanal">semanal</option>
-            <option value="quincenal">quincenal</option>
-            <option value="mensual">mensual</option>
+            <option value="diario">Diario</option>
+            <option value="semanal">Semanal</option>
+            <option value="quincenal">Quincenal</option>
+            <option value="mensual">Mensual</option>
             
           </select>
         </div>
@@ -74,7 +74,7 @@
           </select>
         </div>
         <div class="form-group col-12 col-md-4">
-          <label class="small mb-1" for="inputUsername">Fecha emision</label>
+          <label class="small mb-1" for="inputUsername">Fecha préstamo</label>
           <input class="form-control" id="date" type="date" name="date">
         </div>
       </div>
@@ -89,7 +89,7 @@
           <input class="form-control" id="valor_cuota" type="text" name="fee_amount" readonly>
         </div>
         <div class="form-group col-12 col-md-4">
-          <label class="small mb-1" for="inputUsername">valor Interes</label>
+          <label class="small mb-1" for="inputUsername">Valor Interes</label>
           <input class="form-control" id="valor_interes" type="text" name="" disabled>
         </div>
         <div class="form-group col-12 col-md-4">

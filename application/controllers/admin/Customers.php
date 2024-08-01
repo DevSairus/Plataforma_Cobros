@@ -24,7 +24,7 @@ class Customers extends CI_Controller {
     if ($id) {
       $data['customer'] = $this->customers_m->get($id);
       $data['provinces'] = $this->customers_m->get_editProvinces($data['customer']->department_id);
-      //$data['districts'] = $this->customers_m->get_editDistricts($data['customer']->province_id);
+      $data['districts'] = $this->customers_m->get_editDistricts($data['customer']->province_id);
     } else {
       $data['customer'] = $this->customers_m->get_new();
     }

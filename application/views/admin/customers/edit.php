@@ -14,7 +14,7 @@
     
     <div class="form-row">
       <div class="form-group col-md-3">
-        <label class="small mb-1" for="dni">Ingresar dni</label>
+        <label class="small mb-1" for="dni">Ingresar cédula</label>
         <input class="form-control" id="dni" type="text" name="dni" value="<?php echo set_value('dni', $this->input->post('dni') ? $this->input->post('dni') : $customer->dni); ?>">
       </div>
       <div class="form-group col-md-3">
@@ -45,10 +45,10 @@
 
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label class="small mb-1" for="department_id">Seleccionar departamento</label>
+        <label class="small mb-1" for="department_id">Seleccionar paías</label>
         <select class="form-control" id="department_id" name="department_id">
           <?php if ($customer->department_id == 0): ?>
-            <option value = "" selected>Seleccionar departamento</option>
+            <option value = "" selected>Seleccionar país</option>
           <?php endif ?>
           <?php foreach ($departments as $dp): ?>
             <option value="<?php echo $dp->id ?>" <?php if ($dp->id == $customer->department_id) echo "selected" ?>><?php echo $dp->name ?></option>
@@ -56,10 +56,10 @@
         </select>
       </div>
       <div class="form-group col-md-4">
-        <label class="small mb-1" for="province_id">Seleccionar ciudad</label>
+        <label class="small mb-1" for="province_id">Seleccionar departamento</label>
         <select class="form-control" id="province_id" name="province_id">
           <?php if ($customer->province_id == 0): ?>
-            <option value = "" selected>Seleccionar ciudad</option>
+            <option value = "" selected>Seleccionar departamento</option>
           <?php else: ?>
             <?php foreach ($provinces as $pr): ?>
               <option value="<?php echo $pr->id ?>" <?php if ($pr->id == $customer->province_id) echo "selected" ?>><?php echo $pr->name ?></option>
@@ -69,10 +69,10 @@
       </div>
 
       <div class="form-group col-md-4">
-        <label class="small mb-1" for="district_id">Seleccionar distrito</label>
+        <label class="small mb-1" for="district_id">Seleccionar ciudad</label>
         <select class="form-control" id="district_id" name="district_id">
           <?php if ($customer->district_id == 0): ?>
-            <option value = "" selected>Seleccionar distrito</option>
+            <option value = "" selected>Seleccionar ciudad</option>
           <?php else: ?>
             <?php foreach ($districts as $ds): ?>
               <option value="<?php echo $ds->id ?>" <?php if ($ds->id == $customer->district_id) echo "selected" ?>><?php echo $ds->name ?></option>
@@ -103,7 +103,7 @@
         <input class="form-control" id="business_name" type="text" name="business_name" value="<?php echo set_value('business_name', $this->input->post('business_name') ? $this->input->post('business_name') : $customer->business_name); ?>">
       </div>
       <div class="form-group col-md-4">
-        <label class="small mb-1" for="ruc">Ingresar ruc</label>
+        <label class="small mb-1" for="ruc">Ingresar NIT</label>
         <input class="form-control" id="ruc" type="text" name="ruc" value="<?php echo set_value('ruc', $this->input->post('ruc') ? $this->input->post('ruc') : $customer->ruc); ?>">
       </div>
       <div class="form-group col-md-4">

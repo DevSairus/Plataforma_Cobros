@@ -16,7 +16,7 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>dni</th>
+            <th>Cédula</th>
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Genero</th>

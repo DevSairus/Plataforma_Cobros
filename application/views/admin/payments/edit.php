@@ -6,7 +6,7 @@
 
       <div class="form-row">
         <div class="form-group col-12 col-md-8">
-          <label class="small mb-1" for="exampleFormControlSelect2">Buscar cliente por DNI</label>
+          <label class="small mb-1" for="exampleFormControlSelect2">Buscar cliente por cédula</label>
           <div class="input-group">
             <input type="text" id="dni_c" class="form-control">
             <input type="hidden" name="loan_id" id="loan_id">
@@ -22,7 +22,7 @@
 
       <div class="form-row">
         <div class="form-group col-12 col-md-4">
-          <label class="small mb-1" for="inputUsername">Dni</label>
+          <label class="small mb-1" for="inputUsername">Cédula</label>
           <input class="form-control" id="dni_cst" type="text" disabled>
         </div>
         <div class="form-group col-12 col-md-4">

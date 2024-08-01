@@ -8,8 +8,8 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Dni</th>
-            <th>cliente</th>
+            <th>Cédula</th>
+            <th>Cliente</th>
             <th>N° Prest.</th>
             <th>N° cuota</th>
             <th>M. cancelado</th>

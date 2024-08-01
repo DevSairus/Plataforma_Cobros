@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ticket No 132</title>
+  <title>Recibo de pago</title>
 
   <link href="<?php echo site_url(); ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
   <style type="text/css" media="all">
